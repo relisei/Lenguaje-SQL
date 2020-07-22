@@ -1,0 +1,528 @@
+Ejercicio 3
+
+1_ Lista el nombre de todos los productos que hay en la tabla producto.
+
+SELECT * FROM producto;
+
+1	Disco duro SATA3 1TB		86.99	5
+2	Memoria RAM DDR4 8GB		120	6
+3	Disco SSD 1 TB			150.99	4
+4	GeForce GTX 1050Ti		185	7
+5	GeForce GTX 1080 Xtreme		755	6
+6	Monitor 24 LED Full HD		202	1
+7	Monitor 27 LED Full HD		245.99	1
+8	Portátil Yoga 520		559	2
+9	Portátil Ideapd 320		444	2
+10	Impresora HP Deskjet 3720	59.99	3
+11	Impresora HP Laserjet Pro M26nw	180	3
+
+
+
+
+2_Lista los nombres y los precios de todos los productos de la tabla producto.
+
+SELECT nombre, precio from producto;
+
+Disco duro SATA3 1TB		86.99
+Memoria RAM DDR4 8GB		120
+Disco SSD 1 TB			150.99
+GeForce GTX 1050Ti		185
+GeForce GTX 1080 Xtreme		755
+Monitor 24 LED Full HD		202
+Monitor 27 LED Full HD		245.99
+Portátil Yoga 520		559
+Portátil Ideapd 320		444
+Impresora HP Deskjet 3720	59.99
+Impresora HP Laserjet Pro M26nw	180
+
+
+
+
+3_Lista todas las columnas de la tabla producto.
+
+SELECT codigo, nombre, precio, codigo_fabricante FROM producto;
+
+1	Disco duro SATA3 1TB		86.99	5
+2	Memoria RAM DDR4 8GB		120	6
+3	Disco SSD 1 TB			150.99	4
+4	GeForce GTX 1050Ti		185	7
+5	GeForce GTX 1080 Xtreme		755	6
+6	Monitor 24 LED Full HD		202	1
+7	Monitor 27 LED Full HD		245.99	1
+8	Portátil Yoga 520		559	2
+9	Portátil Ideapd 320		444	2
+10	Impresora HP Deskjet 3720	59.99	3
+11	Impresora HP Laserjet Pro M26nw	180	3
+
+
+
+
+4_Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD).
+
+SELECT nombre, precio USD, precio EUR FROM producto;
+
+Disco duro SATA3 1TB		86.99	86.99
+Memoria RAM DDR4 8GB		120	120
+Disco SSD 1 TB			150.99	150.99
+GeForce GTX 1050Ti		185	185
+GeForce GTX 1080 Xtreme		755	755
+Monitor 24 LED Full HD		202	202
+Monitor 27 LED Full HD		245.99	245.99
+Portátil Yoga 520		559	559
+Portátil Ideapd 320		444	444
+Impresora HP Deskjet 3720	59.99	59.99
+Impresora HP Laserjet Pro M26nw	180	180
+
+
+
+
+5_Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD). Utiliza los siguientes alias para las columnas: nombre de producto, euros, dólares
+
+SELECT 'nombre de producto' , 'euro', 'dolares' FROM producto;
+
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+nombre de producto	euro	dolares
+
+
+
+
+6_Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a mayúscula.
+
+SELECT UCASE (nombre) AS MAYUSCULA, precio FROM producto;
+
+DISCO DURO SATA3 1TB		86.99
+MEMORIA RAM DDR4 8GB		120
+DISCO SSD 1 TB			150.99
+GEFORCE GTX 1050TI		185
+GEFORCE GTX 1080 XTREME		755
+MONITOR 24 LED FULL HD		202
+MONITOR 27 LED FULL HD		245.99
+PORTÁTIL YOGA 520		559
+PORTÁTIL IDEAPD 320		444
+IMPRESORA HP DESKJET 3720	59.99
+IMPRESORA HP LASERJET PRO M26NW	180
+
+
+
+
+7_Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a minúscula.
+
+SELECT LCASE (nombre) AS MINUSCULA, precio FROM producto;
+
+disco duro sata3 1tb		86.99
+memoria ram ddr4 8gb		120
+disco ssd 1 tb			150.99
+geforce gtx 1050ti		185
+geforce gtx 1080 xtreme		755
+monitor 24 led full hd		202
+monitor 27 led full hd		245.99
+portátil yoga 520		559
+portátil ideapd 320		444
+impresora hp deskjet 3720	59.99
+impresora hp laserjet pro m26nw	180
+
+
+
+
+8_Lista el nombre de todos los fabricantes en una columna, y en otra columna obtenga en mayúsculas los dos primeros caracteres del nombre del fabricante.
+
+SELECT nombre, UPPER(LEFT(nombre,2)) FROM fabricante;
+
+Asus		AS
+Lenovo		LE
+Hewlett-Packard	HE
+Samsung		SA
+Seagate		SE
+Crucial		CR
+Gigabyte	GI
+Huawei		HU
+Xiaomi		XI
+
+
+
+
+9_Lista los nombres y los precios de todos los productos de la tabla producto, redondeando el valor del precio. 
+
+SELECT nombre, ROUND(Precio, 1) from producto;
+
+
+Disco duro SATA3 1TB		87.0
+Memoria RAM DDR4 8GB		120.0
+Disco SSD 1 TB			151.0
+GeForce GTX 1050Ti		185.0
+GeForce GTX 1080 Xtreme		755.0
+Monitor 24 LED Full HD		202.0
+Monitor 27 LED Full HD		246.0
+Portátil Yoga 520		559.0
+Portátil Ideapd 320		444.0
+Impresora HP Deskjet 3720	60.0
+Impresora HP Laserjet Pro M26nw	180.0
+
+
+
+
+10_Lista los nombres y los precios de todos los productos de la tabla producto, truncando el valor del precio para mostrarlo sin ninguna cifra decimal.
+
+SELECT nombre, TRUNCATE(Precio, 0) from producto;
+
+Disco duro SATA3 1TB		86
+Memoria RAM DDR4 8GB		120
+Disco SSD 1 TB			150
+GeForce GTX 1050Ti		185
+GeForce GTX 1080 Xtreme		755
+Monitor 24 LED Full HD		202
+Monitor 27 LED Full HD		245
+Portátil Yoga 520		559
+Portátil Ideapd 320		444
+Impresora HP Deskjet 3720	59
+Impresora HP Laserjet Pro M26nw	180
+
+
+
+
+11_Lista el código de los fabricantes que tienen productos en la tabla producto
+
+SELECT codigo_fabricante from producto;
+
+1
+1
+2
+2
+3
+3
+4
+5
+6
+6
+7
+
+
+
+
+12_Lista el código de los fabricantes que tienen productos en la tabla producto, eliminando los códigos que aparecen repetidos.
+
+SELECT DISTINCT codigo_fabricante from producto;
+
+1
+2
+3
+4
+5
+6
+7
+
+
+
+
+13_Lista los nombres de los fabricantes ordenados de forma ascendente.
+
+SELECT nombre from fabricante ORDER BY nombre ASC
+
+Asus
+Crucial
+Gigabyte
+Hewlett-Packard
+Huawei
+Lenovo
+Samsung
+Seagate
+Xiaomi
+
+
+
+
+14_Lista los nombres de los fabricantes ordenados de forma descendente.
+
+SELECT nombre from fabricante ORDER BY nombre DESC
+
+Xiaomi
+Seagate
+Samsung
+Lenovo
+Huawei
+Hewlett-Packard
+Gigabyte
+Crucial
+Asus
+
+
+
+
+15_Lista los nombres de los productos ordenados en primer lugar por el nombre de forma ascendente y en segundo lugar por el precio de forma descendente. 
+
+SELECT nombre, precio from producto 
+ORDER BY nombre, precio DESC;
+
+Disco duro SATA3 1TB		86.99
+Disco SSD 1 TB			150.99
+GeForce GTX 1050Ti		185
+GeForce GTX 1080 Xtreme		755
+Impresora HP Deskjet 3720	59.99
+Impresora HP Laserjet Pro M26nw	180
+Memoria RAM DDR4 8GB		120
+Monitor 24 LED Full HD		202
+Monitor 27 LED Full HD		245.99
+Portátil Ideapd 320		444
+Portátil Yoga 520		559
+
+
+
+
+16_Devuelve una lista con las 5 primeras filas de la tabla fabricante.
+
+SELECT codigo, nombre FROM fabricante LIMIT 0, 5
+
+1	Asus
+2	Lenovo
+3	Hewlett-Packard
+4	Samsung
+5	Seagate
+
+
+
+
+17_Devuelve una lista con 2 filas a partir de la cuarta fila de la tabla fabricante. La cuarta fila también se debe incluir en la respuesta.
+
+SELECT codigo, nombre FROM fabricante LIMIT 3, 3
+
+4	Samsung
+5	Seagate
+6	Crucial
+
+
+
+
+18_Lista el nombre y el precio del producto más barato. (Utilice solamente las cláusulas ORDER BY y LIMIT)
+ 
+SELECT nombre, precio FROM producto ORDER BY precio ASC LIMIT 1;
+
+Impresora HP Deskjet 3720	59.99
+
+
+
+
+19_Lista el nombre y el precio del producto más caro. (Utilice solamente las cláusulas ORDER BY y LIMIT)
+
+SELECT nombre, precio FROM producto ORDER BY precio DESC LIMIT 1;
+
+GeForce GTX 1080 Xtreme	755
+
+
+
+
+20_Lista el nombre de todos los productos del fabricante cuyo código de fabricante es igual a 2
+
+SELECT nombre, codigo_fabricante FROM producto WHERE codigo_fabricante=2;
+
+Portátil Yoga 520	2
+Portátil Ideapd 320	2
+
+
+
+
+21_Lista el nombre de los productos que tienen un precio menor o igual a 120€.
+
+SELECT nombre FROM producto WHERE Precio <= 120
+
+Disco duro SATA3 1TB
+Memoria RAM DDR4 8GB
+Impresora HP Deskjet 3720
+
+
+
+
+22_Lista el nombre de los productos que tienen un precio mayor o igual a 400€.
+
+SELECT nombre FROM producto WHERE Precio >= 400
+
+GeForce GTX 1080 Xtreme
+Portátil Yoga 520
+Portátil Ideapd 320
+
+
+
+
+23_Lista el nombre de los productos que no tienen un precio mayor o igual a 400€    ??????
+
+SELECT nombre, precio FROM producto WHERE Precio <= 400
+
+Disco duro SATA3 1TB		86.99
+Memoria RAM DDR4 8GB		120
+Disco SSD 1 TB			150.99
+GeForce GTX 1050Ti		185
+Monitor 24 LED Full HD		202
+Monitor 27 LED Full HD		245.99
+Impresora HP Deskjet 3720	59.99
+Impresora HP Laserjet Pro M26nw	180
+
+
+
+
+24_Lista todos los productos que tengan un precio entre 80€ y 300€. Sin utilizar el operador BETWEEN
+
+SELECT nombre, precio FROM producto WHERE precio > 80 AND precio< 300;
+
+Disco duro SATA3 1TB		86.99
+Memoria RAM DDR4 8GB		120
+Disco SSD 1 TB			150.99
+GeForce GTX 1050Ti		185
+Monitor 24 LED Full HD		202
+Monitor 27 LED Full HD		245.99
+Impresora HP Laserjet Pro M26nw	180
+
+
+
+
+25_Lista todos los productos que tengan un precio entre 60€ y 200€. Utilizando el operador BETWEEN.
+
+SELECT nombre, precio FROM producto WHERE precio BETWEEN 60 AND 200;
+
+Disco duro SATA3 1TB	86.99
+Memoria RAM DDR4 8GB	120
+Disco SSD 1 TB	150.99
+GeForce GTX 1050Ti	185
+Impresora HP Laserjet Pro M26nw	180
+
+
+
+
+26_Lista todos los productos que tengan un precio mayor que 200€ y que el código de fabricante sea igual a 6.
+
+SELECT nombre, precio FROM producto WHERE Precio < 200 AND codigo_fabricante=6;
+
+Memoria RAM DDR4 8GB	120
+
+
+
+
+27_Lista todos los productos donde el código de fabricante sea 1, 3 o 5. Sin utilizar el operador IN
+
+SELECT nombre FROM producto WHERE codigo_fabricante=1 OR codigo_fabricante=3 OR codigo_fabricante=5
+
+Disco duro SATA3 1TB
+Monitor 24 LED Full HD
+Monitor 27 LED Full HD
+Impresora HP Deskjet 3720
+Impresora HP Laserjet Pro M26nw
+
+
+
+
+28_Lista todos los productos donde el código de fabricante sea 1, 3 o 5. Utilizando el operador IN.
+
+SELECT nombre FROM producto WHERE codigo_fabricante IN (1,3,5)
+
+Disco duro SATA3 1TB
+Monitor 24 LED Full HD
+Monitor 27 LED Full HD
+Impresora HP Deskjet 3720
+Impresora HP Laserjet Pro M26nw
+
+
+
+
+29_Lista el nombre y el precio de los productos en céntimos (Habrá que multiplicar por 100 el valor del precio). Cree un alias para la columna que contiene el precio que se llame céntimos.
+
+SELECT nombre, precio * 100 AS centimos FROM producto
+
+Disco duro SATA3 1TB		8699
+Memoria RAM DDR4 8GB		12000
+Disco SSD 1 TB			15099
+GeForce GTX 1050Ti		18500
+GeForce GTX 1080 Xtreme		75500
+Monitor 24 LED Full HD		20200
+Monitor 27 LED Full HD		24599
+Portátil Yoga 520		55900
+Portátil Ideapd 320		44400
+Impresora HP Deskjet 3720	5999
+Impresora HP Laserjet Pro M26nw	18000
+
+
+
+
+30_Lista los nombres de los fabricantes cuyo nombre empiece por la letra S
+
+SELECT * FROM fabricante WHERE nombre LIKE 'S%'
+
+4	Samsung
+5	Seagate
+
+
+
+
+31_Lista los nombres de los fabricantes cuyo nombre termine por la vocal e
+
+SELECT DISTINCT nombre FROM fabricante WHERE nombre LIKE '%E';
+
+Seagate
+Gigabyte
+
+
+
+
+32_Lista los nombres de los fabricantes cuyo nombre contenga el carác
+
+SELECT nombre FROM fabricante WHERE nombre regexp 'W';
+
+Hewlett-Packard
+Huawei
+
+
+
+
+33_Lista los nombres de los fabricantes cuyo nombre sea de 4 caracteres.
+
+SELECT nombre FROM fabricante WHERE nombre regexp '^....$';
+
+Asus
+
+
+
+
+34_Devuelve una lista con el nombre de todos los productos que contienen la cadena Portátil en el nombre.
+
+SELECT nombre FROM producto WHERE nombre regexp 'Portátil';
+
+Portátil Yoga 520
+Portátil Ideapd 320
+
+
+
+
+35_Devuelve una lista con el nombre de todos los productos que contienen la cadena Monitor en el nombre y tienen un precio inferior a 215 €.
+
+SELECT nombre, precio FROM producto WHERE nombre regexp 'Monitor' AND Precio < 215; 
+
+Monitor 24 LED Full HD	202
+
+
+
+
+36_Lista el nombre y el precio de todos los productos que tengan un precio mayor o igual a 180€. Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente).
+
+SELECT nombre, precio FROM producto 
+WHERE Precio <= 180
+ORDER BY Precio DESC, Nombre
+
+Impresora HP Laserjet Pro M26nw	180
+Disco SSD 1 TB			150.99
+Memoria RAM DDR4 8GB		120
+Disco duro SATA3 1TB		86.99
+Impresora HP Deskjet 3720	59.99
+
+
+
+
+
+
+
+
